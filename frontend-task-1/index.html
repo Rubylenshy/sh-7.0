@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SH | Task 1</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="container">
+            <h1 class="primary-header">Simple Form</h1>
+            <p class="message"><img src="media/icon-thank-you.svg" alt="Checkmark" style="display: none;"> Please provide the following details to complete your info.</p>
+            <form action="" >
+                <div class="">
+                    <label for="input-name">Name</label><br>
+                    <input type="text" placeholder="e.g Tom Smith" name="Name">
+                </div>
+                <div class="">
+                    <label for="input-email">Email Address</label><br>
+                    <input type="email" placeholder="e.g example@gmail.com" name="Email">
+                </div>
+                <div class="">
+                    <label for="input-phone">Phone Number</label><br>
+                    <input type="tel" placeholder="e.g 09059040945" name="Phone" maxlength="11">
+                </div>
+                <div class="">
+                    <label for="input-gender">Gender</label><br>
+                    <select type="" title="Gender">
+                        <option value="">--Select Gender--</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Female">LGBTQ🌈</option>    
+                    </select>
+                </div>
+                <div class="">
+                    <div class="password-label"><label for="input-password">Password</label> <label id="show-password" for=""><img src="media/toggle-off.svg" alt="" class="hide"> <img src="media/toggle-on.svg" alt="" class="show">Show Password</label></div>
+                    <input type="password" minlength="6" placeholder="Enter password" name="Password">
+                </div>
+                <button type="button" class="submit-btn">Submit</button>
+            </form>
+    
+        
+        </div>
+    </main>
+    <footer>
+        &copy; 2023 | SideHustle 7.0 - Task 1
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

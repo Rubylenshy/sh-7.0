@@ -1,5 +1,6 @@
 
 const input = document.querySelectorAll('input')
+const select = document.querySelectorAll('select')
 const message = document.querySelector('.message')
 const messageIcon = document.querySelector('.message>img')
 const submitBtn = document.querySelector('.submit-btn')
@@ -106,7 +107,7 @@ showp.addEventListener('click', ()=>{
     submitBtn.addEventListener('click', ()=>{
         
         for (let i = 0; i < input.length; i++) {
-            if (input[i].value == '') {
+            if (input[i].value == '' ) {
                 message.textContent = 'All fields are required!'
                 message.style.color = 'red'
                 input[i].style.border = '2px solid red'
@@ -124,7 +125,7 @@ showp.addEventListener('click', ()=>{
     
                 submitBtn.style.animation = 'shake .5s'
             }
-            else if(label[i].style.color != 'red' && input[i].value != '' && input[3].value.length >= 6 && input[2].value.length == 11){
+            else if(label[i].style.color != 'red' && input[i].value != '' && input[3].value.length >= 6 && input[2].value.length == 11 ){
                 input[i].value = ''
                 messageIcon.style.display = 'block'
                 message.textContent = '🎊 Congratulations, your info has been received!'

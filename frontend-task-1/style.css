@@ -26,6 +26,7 @@ button, select, #show-password > img{
 
 body{
     background: url(media/background.jpg) center;
+    background-repeat: no-repeat;
 }
 main{
     display: flex;
@@ -59,11 +60,18 @@ input:focus{
 .primary-header{
     font-size: 1.45em;
 }
+.primary-header strong{
+    font-weight: 800;
+    color: #168016;
+}
 .message{
     display: flex;
     align-items: center;
     color: var(--cool-gray);
     margin: 10px 0 20px;
+}
+.message img{
+    display: none;
 }
 .password-label{
     display: flex;
@@ -75,6 +83,7 @@ input:focus{
 }
 #show-password > img{
     margin-right: 5px;
+    width: 20px;
 }
 .show{
     display: none;
@@ -88,11 +97,11 @@ input:focus{
     border: none;
     border-radius: 5px;
     color: #fff;
-    background: rgb(47, 47, 134);
+    background: #168016;
     margin-top: 30px;
 }
 .submit-btn:hover{
-    background: rgb(31, 31, 71);
+    background: #0b3f0b;
 }
 
 

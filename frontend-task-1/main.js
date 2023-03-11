@@ -44,7 +44,7 @@ input[1].onblur = ()=>{
 
 var phoneNumber = /^(0)([0-9)]+)$/
 input[2].onkeyup = ()=>{
-    if (input[2].value.match(phoneNumber)) {
+    if (input[2].value.match(phoneNumber) && input[2].value.length == 11) {
         label[2].textContent = 'Phone Number'
         label[2].style.color = 'inherit'
     }
@@ -97,33 +97,39 @@ showp.addEventListener('click', ()=>{
 })
 
 
-submitBtn.addEventListener('click', ()=>{
+// document.addEventListener('keydown', (event)=>{
+//     if (event.key === 'Enter') {
+        
+//       }
+// })
+
+    submitBtn.addEventListener('click', ()=>{
+        
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].value == '') {
+                message.textContent = 'All fields are required!'
+                message.style.color = 'red'
+                input[i].style.border = '2px solid red'
     
-    for (let i = 0; i < input.length; i++) {
-        if (input[i].value == '') {
-            message.textContent = 'All fields are required!'
-            message.style.color = 'red'
-            input[i].style.border = '2px solid red'
-
-            submitBtn.style.animation = 'shake .5s'
-            setTimeout(() => {
-                message.textContent = 'Please provide the following details to complete your info.'
-                message.style.color = 'inherit'
+                submitBtn.style.animation = 'shake .5s'
+                setTimeout(() => {
+                    message.textContent = 'Please provide the following details to complete your info.'
+                    message.style.color = 'inherit'
+                    input[i].style.border = '1px solid black'
+                }, 3000);
+            }
+            else if(label[i].style.color == 'red'){
+                message.textContent = 'Please input valid details!'
+                message.style.color = 'red'
+    
+                submitBtn.style.animation = 'shake .5s'
+            }
+            else if(label[i].style.color != 'red' && input[i].value != '' && input[3].value.length >= 6 && input[2].value.length == 11){
+                input[i].value = ''
+                messageIcon.style.display = 'block'
+                message.textContent = '🎊 Congratulations, your info has been received!'
+                message.style.color = 'green'
                 input[i].style.border = '1px solid black'
-            }, 3000);
+            }
         }
-        else if(label[i].style.color == 'red'){
-            message.textContent = 'Please input valid details!'
-            message.style.color = 'red'
-
-            submitBtn.style.animation = 'shake .5s'
-        }
-        else if(label[i].style.color != 'red' || input[i].value != ''){
-            input[i].value = ''
-            messageIcon.style.display = 'flex'
-            message.textContent = 'Congratulations, your info has been received!'
-            message.style.color = 'green'
-            input[i].style.border = '1px solid black'
-        }
-    }
-})
+    })
